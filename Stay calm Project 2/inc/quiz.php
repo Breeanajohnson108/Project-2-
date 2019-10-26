@@ -2,7 +2,7 @@
 session_start();
 
 include ("generate_questions.php");
-include ("kint.phar");
+
 $total_count = 10;
 
 /**
