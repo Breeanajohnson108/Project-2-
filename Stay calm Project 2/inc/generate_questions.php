@@ -4,8 +4,8 @@
 * Use this function to generate a random number
 **/
 function genQuestion(){
-    $min = 0;
-    $max = 500;
+    $min = 120;
+    $max = 150;
     $maxAnswer = 1;
     $question['leftAdder'] = numGenerator($min,$max);
     $question['rightAdder'] = numGenerator($min,$max);
