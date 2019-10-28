@@ -11,6 +11,17 @@ function genQuestion(){
     $question['rightAdder'] = numGenerator($min,$max);
     if(isset($question['leftAdder']) && isset($question['rightAdder'])){
       $question['answer'] =  [];
+      
+      $realAnswer =  $question['leftAdder'] + $question['rightAdder'];
+      array_push($question['answer'], $realAnswer);
+      
+      $fake_answer_1 = $realAnswer + numGenerator(1,10);
+      array_push($question['answer'], $fake_answer_1);
+
+      $fake_answer_2 = $realAnswer - numGenerator(1,10);
+      array_push($question['answer'], $fake_answer_2);
+
+/*
       for($x = 0; $x <= $maxAnswer; $x++){
         $fake_answer = numGenerator($min,$max);
         if($fake_answer === $question['answer'][$x]){
@@ -18,8 +29,8 @@ function genQuestion(){
         }
         array_push($question['answer'], $fake_answer);
       }
-      $realAnswer =  $question['leftAdder'] + $question['rightAdder'];
-      array_push($question['answer'], $realAnswer);
+*/      
+      
       $question['correctAnswer'] =  $realAnswer;
     }
     return $question;
